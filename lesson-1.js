@@ -122,4 +122,18 @@ function fizzBuzz(number) {
     return " не відповідає вимогам)";
   }
 }
-console.log(fizzBuzz(20));
+// console.log(fizzBuzz(20));
+
+
+//~ Створи функцію logNumbers яка приймає число і логує від 0 і до цього числа
+//~ скористаємося циклом while
+
+function logNumbers(number) {
+  let i = 0; 
+  while (i < number) {
+    i += 1; 
+    console.log(i);
+  }
+  return 'end'; 
+}
+console.log(logNumbers(20))
