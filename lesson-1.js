@@ -3,15 +3,15 @@
 
 function time(number) {
   if (number >= 0 && number <= 15) {
-    return 'Перша чверть';
+    return "Перша чверть";
   } else if (number > 15 && number <= 30) {
-    return 'Друга чверть';
+    return "Друга чверть";
   } else if (number > 30 && number <= 45) {
-    return 'Третя чверть';
+    return "Третя чверть";
   } else if (number > 45 && number <= 59) {
-    return 'Четверта чверть';
+    return "Четверта чверть";
   } else {
-    return 'Введіть число від 0 до 59';
+    return "Введіть число від 0 до 59";
   }
 }
 
@@ -23,30 +23,30 @@ function time(number) {
 // let valueSeason = prompt("Введіть число від 1 до 4");
 
 function getSeason() {
-  let valueSeason = prompt('Введіть число від 1 до 4');
+  let valueSeason = prompt("Введіть число від 1 до 4");
   console.log(valueSeason);
 
-  let result = '';
+  let result = "";
 
   switch (Number(valueSeason)) {
     case 1:
-      result = 'зима';
+      result = "зима";
       break;
 
     case 2:
-      result = 'весна';
+      result = "весна";
       break;
 
     case 3:
-      result = 'літо';
+      result = "літо";
       break;
 
     case 4:
-      result = 'осінь';
+      result = "осінь";
       break;
 
     default:
-      result = 'не-знайдено';
+      result = "не-знайдено";
       break;
   }
 
@@ -87,19 +87,39 @@ function logNumbers(min, max) {
 //то вивести рядок "Добрий день!"
 //інакше виводити рядок "Невірний пароль!"
 
-const userRule = prompt('Введіть логін');
+/*
+const userRule = prompt("Введіть логін");
 // console.log("userRul
 // console.log("userRule: ", userRule);
-if (userRule === 'Адмін') {
-  const password = prompt('Введіть пароль');
+if (userRule === "Адмін") {
+  const password = prompt("Введіть пароль");
   console.log(password);
   if (!password) {
-    console.log('Скасовано');
-  } else if (password === 'Я головний') {
-    console.log('Добрий день!');
+    console.log("Скасовано");
+  } else if (password === "Я головний") {
+    console.log("Добрий день!");
   } else {
-    console.log('Невірний пароль!');
+    console.log("Невірний пароль!");
   }
 } else {
-  console.log('Я вас не знаю');
+  console.log("Я вас не знаю");
 }
+  */
+
+// Напишіться функцію fizzBuzz яка приймає число
+//Якщо число ділитися на 3 повертати fizz
+//якщо ділитися на 5 повертати buzz
+//Якщо ділитися на 3 і на 5 повернути fizzbuzz
+
+function fizzBuzz(number) {
+  if (number % 3 === 0 && number % 5 === 0) {
+    return "fizzbuzz";
+  } else if (number % 5 === 0) {
+    return "buzz";
+  } else if (number % 3 === 0) {
+    return "fizz";
+  } else {
+    return " не відповідає вимогам)";
+  }
+}
+console.log(fizzBuzz(20));
