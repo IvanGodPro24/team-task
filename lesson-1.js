@@ -9,10 +9,48 @@ function time(number) {
   } else if (number > 30 && number <= 45) {
     return "Третя чверть";
   } else if (number > 45 && number <= 59) {
-      return "Четверта чверть";
+    return "Четверта чверть";
   } else {
-      return "Введіть число від 0 до 59";
+    return "Введіть число від 0 до 59";
   }
 }
 
-console.log(time(0))
+// console.log(time(0));
+
+//~ Напиши функцію яка запитує у користувача ведення числа  1, 2, 3 або 4. Якщо вона має
+//~ значення '1', то у змінну result запишемо 'зима', якщо має значення
+//~ '2' - 'весна' і так далі. Розв'яжіть завдання через switch-case.
+// let valueSeason = prompt("Введіть число від 1 до 4");
+
+function getSeason() {
+  let valueSeason = prompt("Введіть число від 1 до 4");
+  console.log(valueSeason);
+
+  let result = "";
+
+  switch (Number(valueSeason)) {
+    case 1:
+      result = "зима";
+      break;
+
+    case 2:
+      result = "весна";
+      break;
+
+    case 3:
+      result = "літо";
+      break;
+
+    case 4:
+      result = "осінь";
+      break;
+
+    default:
+      result = "не-знайдено";
+      break;
+  }
+
+  return result;
+}
+
+console.log(getSeason(5));
