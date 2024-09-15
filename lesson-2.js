@@ -56,7 +56,7 @@ function makeInvetedString(string) {
   return toCase;
 }
 
-console.log(makeInvetedString("JavaScript"));
+// console.log(makeInvetedString("JavaScript"));
 
 //У нас є об'єкт, у якому зберігатимуться зарплати
 //нашої команди
@@ -78,4 +78,28 @@ function totalSalaries(salaries) {
 
   return sum;
 }
-console.log(totalSalaries(salaries));
+// console.log(totalSalaries(salaries));
+
+//Напишіть ф-цію calcTotalPrice(stones, stonesName),
+//яка приймає масив об'єктів і
+//Рядок з назвою каменю.
+//Функція вважає, що функція повертає загальну вартість каменів
+//з ​​таким ім'ям, ціною та кількістю з об'єкта
+
+const stones = [
+{ name: "Смарагд", price: 1300, quantity: 4 },
+{ name: "Діамант", price: 2700, quantity: 6 },
+{ name: "Сапфір", price: 400, quantity: 7},
+{ name: "Щебінь", price: 150, quantity: 100 },
+];
+
+function calcTotalPrice(stones, stonesName) {
+    for (const stone of stones) {
+        if (stone.name === stonesName) {
+            const totalPrice = stone.price * stone.quantity
+            return `Stone ${stonesName} has quantity ${stone.quantity} and price ${stone.price}. Total Price: ${totalPrice}`
+        }
+    }
+}
+
+console.log(calcTotalPrice(stones, "Сапфір"));
