@@ -87,19 +87,50 @@ function totalSalaries(salaries) {
 //з ​​таким ім'ям, ціною та кількістю з об'єкта
 
 const stones = [
-{ name: "Смарагд", price: 1300, quantity: 4 },
-{ name: "Діамант", price: 2700, quantity: 6 },
-{ name: "Сапфір", price: 400, quantity: 7},
-{ name: "Щебінь", price: 150, quantity: 100 },
+  { name: "Смарагд", price: 1300, quantity: 4 },
+  { name: "Діамант", price: 2700, quantity: 6 },
+  { name: "Сапфір", price: 400, quantity: 7 },
+  { name: "Щебінь", price: 150, quantity: 100 },
 ];
 
 function calcTotalPrice(stones, stonesName) {
-    for (const stone of stones) {
-        if (stone.name === stonesName) {
-            const totalPrice = stone.price * stone.quantity
-            return `Stone ${stonesName} has quantity ${stone.quantity} and price ${stone.price}. Total Price: ${totalPrice}`
-        }
+  for (const stone of stones) {
+    if (stone.name === stonesName) {
+      const totalPrice = stone.price * stone.quantity;
+      return `Stone ${stonesName} has quantity ${stone.quantity} and price ${stone.price}. Total Price: ${totalPrice}`;
     }
+  }
 }
 
 console.log(calcTotalPrice(stones, "Сапфір"));
+
+//Напишіть функцію getUniqueValues(arr), яка повертає масив,
+//якій містить лише унікальні елементи.
+
+const words = [
+  "HTML",
+  "CSS",
+  "JS",
+  "React",
+  "JS",
+  "CSS",
+  "JS",
+  "Node.js",
+  "JS",
+  "React",
+  "CSS",
+  "React",
+  "HTML",
+  "Node.js",
+];
+
+function getUniqueValues(arr) {
+  let uniqueValues = [];
+  for (const word of arr) {
+    if (!uniqueValues.includes(word)) {
+      uniqueValues.push(word);
+    }
+  }
+  return uniqueValues;
+}
+console.log(getUniqueValues(words));
