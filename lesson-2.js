@@ -7,7 +7,7 @@ function caclculateAverage(...array) {
   let sum = 0;
   let totalCount = 0;
   for (const elem of array) {
-    if (typeof elem === 'number') {
+    if (typeof elem === "number") {
       totalCount += 1;
       sum += elem;
     }
@@ -27,7 +27,7 @@ function caclculateAverage(...array) {
 // const string = "Nunc sed turpis a felis in nunc fringilla"
 
 function findLongestWord(string) {
-  let words = string.split(' ');
+  let words = string.split(" ");
   let longestWord = words[0];
   for (const word of words) {
     if (longestWord.length < word.length) {
@@ -43,18 +43,39 @@ function findLongestWord(string) {
 //Наприклад 'JavaScript' повинен повернути 'jAVAsCRIPT'
 
 function makeInvetedString(string) {
-    let text = string.split("");
-    let toCase = "";
-    for (const letter of text) {
-        if (letter.toUpperCase() === letter) {
-            toCase += letter.toLowerCase();
-        } else {
-           toCase += letter.toUpperCase()
-        }
+  let text = string.split("");
+  let toCase = "";
+  for (const letter of text) {
+    if (letter.toUpperCase() === letter) {
+      toCase += letter.toLowerCase();
+    } else {
+      toCase += letter.toUpperCase();
     }
-    
-    
-    return toCase
+  }
+
+  return toCase;
 }
 
 console.log(makeInvetedString("JavaScript"));
+
+//У нас є об'єкт, у якому зберігатимуться зарплати
+//нашої команди
+//Напишіть код для сумування всіх зарплат і
+//збережіть його результат у змінній sum.
+//Якщо об'єкт salaries порожній, то результат має бути 0
+
+const salaries = {
+  Mango: 100,
+  Poly: 160,
+  Ajax: 1470,
+};
+function totalSalaries(salaries) {
+  let sum = 0;
+  let values = Object.values(salaries);
+  for (const number of values) {
+    sum += number;
+  }
+
+  return sum;
+}
+console.log(totalSalaries(salaries));
