@@ -36,4 +36,25 @@ function findLongestWord(string) {
   }
   return longestWord;
 }
-console.log(findLongestWord('Nunc sed turpis a felis in nunc fringilla'));
+// console.log(findLongestWord('Nunc sed turpis a felis in nunc fringilla'));
+
+//Напишіть функцію makeInvetedString(), яка замінює регістр кожного символу
+//У сторіччі на протилежний
+//Наприклад 'JavaScript' повинен повернути 'jAVAsCRIPT'
+
+function makeInvetedString(string) {
+    let text = string.split("");
+    let toCase = "";
+    for (const letter of text) {
+        if (letter.toUpperCase() === letter) {
+            toCase += letter.toLowerCase();
+        } else {
+           toCase += letter.toUpperCase()
+        }
+    }
+    
+    
+    return toCase
+}
+
+console.log(makeInvetedString("JavaScript"));
