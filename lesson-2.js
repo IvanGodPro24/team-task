@@ -102,7 +102,7 @@ function calcTotalPrice(stones, stonesName) {
   }
 }
 
-console.log(calcTotalPrice(stones, "Сапфір"));
+// console.log(calcTotalPrice(stones, "Сапфір"));
 
 //Напишіть функцію getUniqueValues(arr), яка повертає масив,
 //якій містить лише унікальні елементи.
@@ -133,4 +133,21 @@ function getUniqueValues(arr) {
   }
   return uniqueValues;
 }
-console.log(getUniqueValues(words));
+// console.log(getUniqueValues(words));
+
+
+// Додати метод getinfo в об'єкт user, який повертатиме інфу про користувача у форматі
+// Name: Peter. Surname: Parker. Age: 22. Position: spider-man.
+
+const user = {
+    name: 'Peter',
+    surname: 'Parker',
+    age: 22,
+    position: 'spider-man'
+}
+
+user.getinfo = function(){
+return `Name: ${this.name}. Surname: ${this.surname}. Age: ${this.age}. Position: ${this.age}.`
+}
+
+console.log(user.getinfo());
