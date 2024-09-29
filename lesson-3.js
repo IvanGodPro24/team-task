@@ -222,4 +222,23 @@ const newClient = new Client({
 
 console.log(newClient.email);
 newClient.email = "test@gmail.com";
-console.log(newClient.email);
+// console.log(newClient.email);
+
+//Призначити знижку 20% на фрукти в масиві,
+//Присвоїти ID для кожного продукту
+
+const fruits = [
+  { name: "apple", price: 200 },
+  { name: "orange", price: 300 },
+  { name: "grapes", price: 750 },
+];
+
+function discountFruit(fruits, discont) {
+  return fruits.map(fruit => {
+    // console.log(...fruit);
+    
+    return {...fruit, price: fruit.price - fruit.price *  discont / 100, id: Date.now()}
+  })
+}
+
+console.log(discountFruit(fruits, 20));
