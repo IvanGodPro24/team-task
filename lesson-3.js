@@ -90,7 +90,7 @@ const users = [
 // [ 'Moore Hensley', 'Sharlene Bush', 'Ross Vazquez', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony' ]
 
 function getUserNames(usersArray) {
-    return usersArray.map(user => user.name)
+  return usersArray.map((user) => user.name);
 }
 
 // console.log(getUserNames(users));
@@ -99,7 +99,7 @@ function getUserNames(usersArray) {
 // console.log(getUsersWithEyeColor(users, 'blue')); // [об'єкт Moore Hensley, об'єкт Sharlene Bush, об'єкт Carey Barr]
 
 function getUsersWithEyeColor(usersArray, eyeColor) {
-    return usersArray.filter(user => user.eyeColor === eyeColor)
+  return usersArray.filter((user) => user.eyeColor === eyeColor);
 }
 
 // console.log(getUsersWithEyeColor(users, "blue"));
@@ -108,7 +108,7 @@ function getUsersWithEyeColor(usersArray, eyeColor) {
 // console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
 
 function getUsersWithGender(users, gender) {
-  // const usersGender = users.filter(user =>  
+  // const usersGender = users.filter(user =>
   //   {
   //   // console.log(user);
   //   return user.gender === gender
@@ -118,10 +118,9 @@ function getUsersWithGender(users, gender) {
   // return arrNames;
 
   return users
-  .filter(user => user.gender === gender)
-  .map(user => user.name);
+    .filter((user) => user.gender === gender)
+    .map((user) => user.name);
 }
-
 
 // console.log(getUsersWithGender(users, 'male'))
 
@@ -148,3 +147,79 @@ function getS(users) {
   }, {});
 }
 // console.log(getS(users));
+
+function getUsersWithGender(users, gender) {
+  return users.reduce((acc, user, i, arr) => {
+    if (user.gender === gender) {
+      acc.push(user.name);
+    }
+    return acc;
+  }, []);
+}
+// console.log(getUsersWithGender(users, "male"));
+
+function getS(users) {
+  return users.reduce((acc, user, i, arr) => {
+    console.log(`Ітерація ${i + 1}`, acc);
+
+    return {
+      ...acc,
+      [user.name]: user.age,
+    };
+  }, {});
+}
+// console.log(getS(users));
+
+// Отримати масив всіх умінь всіх користувачів (поле skills), при цьому не повинно бути
+// Уміння, що повторюються, і вони повинні бути відсортовані в алфавітному порядку.
+// console.log(getSortedUniqueSkills(users));
+// ['adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit' , 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam']
+
+function getSortedUniqueSkills(users) {
+  return users
+    .flatMap((user) => user.skills)
+    .filter((user, index, array) => array.indexOf(user) === index)
+    .toSorted();
+}
+
+// console.log(getSortedUniqueSkills(users));
+
+//Напиши клас Client який створює об'єкт
+//з ​​властивостями login email
+//Оголоси приватні властивості #login #email,
+//доступ до яких зроби через геттер та сеттер login email
+
+class Client {
+  #login;
+  #email;
+
+  constructor(parameters) {
+    this.#login = parameters.login;
+    this.#email = parameters.email;
+  }
+
+  get email() {
+    return this.#email;
+  }
+
+  set email(newEmail) {
+    this.#email = newEmail;
+  }
+
+  get login() {
+    return this.#login;
+  }
+
+  set login(newLogin) {
+    this.#login = newLogin;
+  }
+}
+
+const newClient = new Client({
+  login: "nkopichinska",
+  email: "nkopichinska@gmail.com",
+});
+
+console.log(newClient.email);
+newClient.email = "test@gmail.com";
+console.log(newClient.email);
