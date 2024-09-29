@@ -104,7 +104,7 @@ function getUsersWithEyeColor(usersArray, eyeColor) {
 
 // console.log(getUsersWithEyeColor(users, "blue"));
 
-//Отримати масив імен користувачів за статтю (поле gender)
+// Отримати масив імен користувачів за статтю (поле gender)
 // console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
 
 function getUsersWithGender(users, gender) {
@@ -123,4 +123,28 @@ function getUsersWithGender(users, gender) {
 }
 
 
-console.log(getUsersWithGender(users, 'male'))
+// console.log(getUsersWithGender(users, 'male'))
+
+// Reduce
+
+function getUsersWithGender(users, gender) {
+  return users.reduce((acc, user, i, arr) => {
+    if (user.gender === gender) {
+      acc.push(user.name);
+    }
+    return acc;
+  }, []);
+}
+// console.log(getUsersWithGender(users, "male"));
+
+function getS(users) {
+  return users.reduce((acc, user, i, arr) => {
+    console.log(`Ітерація ${i + 1}`, acc);
+
+    return {
+      ...acc,
+      [user.name]: user.age,
+    };
+  }, {});
+}
+// console.log(getS(users));
