@@ -93,7 +93,7 @@ function getUserNames(usersArray) {
     return usersArray.map(user => user.name)
 }
 
-console.log(getUserNames(users));
+// console.log(getUserNames(users));
 
 // Отримати масив об'єктів користувачів за кольором очей (поле eyeColor).
 // console.log(getUsersWithEyeColor(users, 'blue')); // [об'єкт Moore Hensley, об'єкт Sharlene Bush, об'єкт Carey Barr]
@@ -102,4 +102,25 @@ function getUsersWithEyeColor(usersArray, eyeColor) {
     return usersArray.filter(user => user.eyeColor === eyeColor)
 }
 
-console.log(getUsersWithEyeColor(users, "blue"));
+// console.log(getUsersWithEyeColor(users, "blue"));
+
+//Отримати масив імен користувачів за статтю (поле gender)
+// console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
+
+function getUsersWithGender(users, gender) {
+  // const usersGender = users.filter(user =>  
+  //   {
+  //   // console.log(user);
+  //   return user.gender === gender
+  // })
+
+  // const arrNames = usersGender.map(user => user.name)
+  // return arrNames;
+
+  return users
+  .filter(user => user.gender === gender)
+  .map(user => user.name);
+}
+
+
+console.log(getUsersWithGender(users, 'male'))
