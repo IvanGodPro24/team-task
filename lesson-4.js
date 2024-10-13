@@ -32,7 +32,6 @@ function swapValue() {
   rightSwapInput.value = leftValue;
 }
 
-
 /*
 Завдання 3
 Кнопка "Приховати" ховає текст і замінює назву кнопки на
@@ -49,9 +48,9 @@ function blurPass() {
   if (input.type === "text") {
     input.type = "password";
     btn.textContent = "Розкрити";
-    return
+    return;
   }
-  input.type = "text"
+  input.type = "text";
   btn.textContent = "Приховати";
 }
 
@@ -70,20 +69,45 @@ decrease.addEventListener("click", decreaseBox);
 
 function decreaseBox() {
   if (widthBox <= 0) {
-    return
+    return;
   }
-  widthBox = widthBox - 10
-  heightBox = heightBox - 10
+  widthBox = widthBox - 10;
+  heightBox = heightBox - 10;
   box.style.width = `${widthBox}px`;
   box.style.height = `${heightBox}px`;
-  
 }
 
 increase.addEventListener("click", increaseBox);
 
 function increaseBox() {
- widthBox = widthBox + 10
-  heightBox = heightBox + 10
+  widthBox = widthBox + 10;
+  heightBox = heightBox + 10;
   box.style.width = `${widthBox}px`;
   box.style.height = `${heightBox}px`;
+}
+
+/*
+Завдання 5
+Натиснувши кнопку "Подвоювати", збільшити значення
+у кожному елементі списку у 2 рази
+*/
+
+const list = document.querySelector(".list");
+const doubleBtn = document.querySelector("#double");
+
+doubleBtn.addEventListener("click", doubleElem);
+
+function doubleElem() {
+  const numberList = document.querySelectorAll(".list .listItem");
+  let elemArray = "";
+
+  numberList.forEach((elem) => {
+    const doubleElem = elem.textContent * 2;
+
+    const li = `<li class="listItem">${doubleElem}</li>`;
+
+    elemArray += li;
+  });
+
+  list.innerHTML = elemArray;
 }
