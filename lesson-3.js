@@ -220,7 +220,7 @@ const newClient = new Client({
   email: "nkopichinska@gmail.com",
 });
 
-console.log(newClient.email);
+// console.log(newClient.email);
 newClient.email = "test@gmail.com";
 // console.log(newClient.email);
 
@@ -241,4 +241,4 @@ function discountFruit(fruits, discont) {
   })
 }
 
-console.log(discountFruit(fruits, 20));
+// console.log(discountFruit(fruits, 20));

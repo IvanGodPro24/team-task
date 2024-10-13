@@ -150,4 +150,4 @@ user.getinfo = function(){
 return `Name: ${this.name}. Surname: ${this.surname}. Age: ${this.age}. Position: ${this.age}.`
 }
 
-console.log(user.getinfo());
+// console.log(user.getinfo());
