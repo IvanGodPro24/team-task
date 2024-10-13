@@ -53,5 +53,37 @@ function blurPass() {
   }
   input.type = "text"
   btn.textContent = "Приховати";
+}
 
+/*
+Завдання 4
+Кнопка "Зменшити" робить квадрат менше на 10 пікселів, допопка "Збільшити" - більше на 10 пікселів.
+*/
+
+const box = document.querySelector("#box");
+let widthBox = parseInt(getComputedStyle(box).width);
+let heightBox = parseInt(getComputedStyle(box).height);
+const decrease = document.querySelector("#decrease");
+const increase = document.querySelector("#increase");
+
+decrease.addEventListener("click", decreaseBox);
+
+function decreaseBox() {
+  if (widthBox <= 0) {
+    return
+  }
+  widthBox = widthBox - 10
+  heightBox = heightBox - 10
+  box.style.width = `${widthBox}px`;
+  box.style.height = `${heightBox}px`;
+  
+}
+
+increase.addEventListener("click", increaseBox);
+
+function increaseBox() {
+ widthBox = widthBox + 10
+  heightBox = heightBox + 10
+  box.style.width = `${widthBox}px`;
+  box.style.height = `${heightBox}px`;
 }
